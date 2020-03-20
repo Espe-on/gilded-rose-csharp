@@ -17,7 +17,7 @@ namespace GildedRose.Tests.ItemTests
                 new Item
                 {
                     Name = "Aged Brie",
-                    SellIn = 30,
+                    SellIn = 0,
                     Quality = 5,
                 },
                 new Item
@@ -28,22 +28,22 @@ namespace GildedRose.Tests.ItemTests
                 }
             };
             _gildedRose = new GildedRose(_testItems);
-        }
-
-        [Test]
-        public void AgedBrieQualityShouldBeCorrectAfter10Days()
-        {
             const int numberOfDays = 10;
             for (var i = 0; i < numberOfDays; i++)
             {
                 _gildedRose.UpdateQuality();
             }
+        }
+
+        [Test]
+        public void AgedBrieShouldGainQualityCorrectly()
+        {
             _testItems[0].Should().BeEquivalentTo(
                 new Item
                 {
                     Name = "Aged Brie",
-                    SellIn = 20,
-                    Quality = 15,
+                    SellIn = -10,
+                    Quality = 25,
                 });
             _testItems[1].Should().BeEquivalentTo(
                 new Item
