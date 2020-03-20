@@ -42,7 +42,7 @@ namespace GildedRose.Tests.ItemTests
                 new Item
                 {
                     Name = "Conjured Mana Cake",
-                    SellIn = 0,
+                    SellIn = 10,
                     Quality = 30,
                 });
         }
