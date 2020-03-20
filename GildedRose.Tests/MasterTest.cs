@@ -65,18 +65,16 @@ namespace GildedRose.Tests
             };
             
             _gildedRose = new GildedRose(_testItems);
-        }
-
-        [Test]
-        public void ItemValuesShouldBeCorrectAfter6Days()
-        {
             const int numberOfDays = 6;
             for (var i = 0; i < numberOfDays; i++)
             {
                 _gildedRose.UpdateQuality();
             }
-            
-            //test item list   
+        }
+
+        [Test]
+        public void ItemValuesShouldBeCorrectAfter6Days()
+        {
             _testItems[0].Should().BeEquivalentTo(new Item
             {
                 Name = "+5 Dexterity Vest", 
