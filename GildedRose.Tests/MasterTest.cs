@@ -70,7 +70,7 @@ namespace GildedRose.Tests
         [Test]
         public void ItemValuesShouldBeCorrectAfter6Days()
         {
-            int numberOfDays = 6;
+            const int numberOfDays = 6;
             for (var i = 0; i < numberOfDays; i++)
             {
                 _gildedRose.UpdateQuality();
